@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Phishing Email Detector",
+  "version": "1.0",
+  "description": "Detects phishing emails using a machine learning model.",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["main.js"]
+    }
+  ]
+}
